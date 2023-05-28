@@ -1,0 +1,13 @@
+[Unit]
+Description=NSM server daemon
+
+[Service]
+EnvironmentFile=%h/.config/environment.d/nsm.conf
+ExecStart=/usr/bin/nsmd --osc-port $NSM_GENERIC_MIXER_PORT
+Slice=app.slice
+Restart=on-failure
+StandardError=journal
+StandardOutput=journal
+
+[Install]
+WantedBy=graphical-session.target

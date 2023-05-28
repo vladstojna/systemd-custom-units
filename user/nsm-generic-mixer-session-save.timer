@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to launch NSM save
+
+[Timer]
+OnActiveSec=2min
+OnUnitActiveSec=2min
+
+[Install]
+WantedBy=timers.target
+

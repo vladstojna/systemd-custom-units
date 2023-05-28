@@ -1,0 +1,8 @@
+[Unit]
+Description=Launch VM %i with GPU passthrough and Looking Glass client
+After=libvirtd.service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/launch-vm-looking-glass "%i"
+Restart=no

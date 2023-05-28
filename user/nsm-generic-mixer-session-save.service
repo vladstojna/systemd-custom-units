@@ -1,0 +1,8 @@
+[Unit]
+Description=Use NSM to save Ardour generic mixer session
+
+[Service]
+EnvironmentFile=%h/.config/environment.d/nsm.conf
+Type=oneshot
+ExecStart=%h/.local/bin/oscli send --host $NSM_GENERIC_MIXER_HOST --port $NSM_GENERIC_MIXER_PORT '/nsm/server/save'
+
