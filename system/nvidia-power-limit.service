@@ -1,0 +1,12 @@
+[Unit]
+Description=set NVIDIA power limit to 300 W
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/nvidia-smi --persistence-mode=1
+ExecStart=/usr/bin/nvidia-smi --power-limit=300
+ExecStop=/usr/bin/nvidia-smi --power-limit=250
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
