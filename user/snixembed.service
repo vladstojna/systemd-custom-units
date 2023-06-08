@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch snixembed
+
+[Service]
+ExecStart=/usr/bin/snixembed
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

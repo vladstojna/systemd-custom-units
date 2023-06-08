@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch Polybar
+
+[Service]
+ExecStart=/usr/bin/polybar --reload "%i"
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch sxhkd
+
+[Service]
+ExecStart=/bin/sh -c '/usr/bin/sxhkd -c "%h"/.config/sxhkd/sxhkdrc "%h"/.config/sxhkd/sxhkdrc.*'
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

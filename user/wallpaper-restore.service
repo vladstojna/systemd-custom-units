@@ -1,0 +1,9 @@
+[Unit]
+Description=Restore wallpaper
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nitrogen --restore
+
+[Install]
+WantedBy=graphical-session.target
