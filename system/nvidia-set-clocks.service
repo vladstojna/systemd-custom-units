@@ -1,0 +1,13 @@
+[Unit]
+Description=Set NVIDIA core and memory clocks
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nvidia-settings -a "GPUGraphicsClockOffset[3]=150"
+ExecStart=/usr/bin/nvidia-settings -a "GPUMemoryTransferRateOffset[3]=1000"
+ExecStop=/usr/bin/nvidia-settings -a "GPUGraphicsClockOffset[3]=0"
+ExecStop=/usr/bin/nvidia-settings -a "GPUMemoryTransferRateOffset[3]=0"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
